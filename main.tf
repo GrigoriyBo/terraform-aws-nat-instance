@@ -73,7 +73,6 @@ resource "aws_eip" "vpn_instance" {
 resource "aws_network_interface" "this" {
   subnet_id         = var.subnet_id
   private_ips       = var.private_ip
-  security_groups   = var.security_group_ids
   source_dest_check = false
   tags              = var.tags
 }
