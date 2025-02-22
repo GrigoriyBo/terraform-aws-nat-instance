@@ -67,3 +67,15 @@ variable "subnet_id" {
     description = "The subnet ID to associate with the network interface"
     type        = string
 }
+
+variable "additional_user_data" {
+  description = "Additional shell commands to execute in user_data"
+  type        = list(string)
+  default     = []
+}
+
+variable "security_group_ids" {
+  description = "A list of security group IDs to associate with the NAT instance"
+  type        = list(string)
+  default     = []
+}
