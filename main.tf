@@ -26,7 +26,6 @@ module "instance" {
   monitoring              = false
   disable_api_termination = true
   availability_zone       = var.availability_zone
-  subnet_id               = var.subnet_id
   create_eip              = true
   eip_tags                = var.tags
   vpc_security_group_ids  = var.vpc_security_group_ids
