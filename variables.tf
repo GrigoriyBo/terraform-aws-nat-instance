@@ -28,7 +28,7 @@ variable "tags" {
 
 variable "private_ip" {
   description = "A list of private IP addresses to assign to the NAT instance's network interface"
-  type        = string
+  type        = list(string)
 }
 
 # Optional: Variables for AMI customization
