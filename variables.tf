@@ -6,11 +6,6 @@ variable "instance_type" {
   type        = string
 }
 
-variable "ami_id" {
-  type    = string
-  default = "ami-0696148faa8979a47"
-}
-
 variable "vpc_id" {
   description = "NAT Instances VPC ID"
   type        = string
