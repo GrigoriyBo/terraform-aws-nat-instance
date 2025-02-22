@@ -28,7 +28,6 @@ module "instance" {
   availability_zone       = var.availability_zone
   create_eip              = true
   eip_tags                = var.tags
-  vpc_security_group_ids  = var.vpc_security_group_ids
 
   root_block_device = [
     {
