@@ -63,6 +63,8 @@ runcmd:
  - [ iptables, -I, FORWARD, -m, state, --state, "ESTABLISHED,RELATED", -j, ACCEPT ]
  - [ iptables, -t, nat, -I, POSTROUTING, -s, ${vpc_cidr}, -o, eth0, -j, MASQUERADE ]
  - [ iptables, -A, INPUT, -s, ${vpc_cidr}, -j, ACCEPT ]
+ - [ iptables, -A, INPUT, -s, ${zerotier_network_cidr}, -j, ACCEPT ]
+ - [ iptables, -A, INPUT, -i, ztwfuisard, -p, ospf, -j, ACCEPT ]
  - [ iptables, -A, INPUT, -p, tcp, --dport, 22, -m, state, --state, NEW, -j, ACCEPT ]
  - [ iptables, -I, INPUT, -m, state, --state, "ESTABLISHED,RELATED", -j, ACCEPT ]
  - [ iptables, -I, INPUT, -i, lo, -j, ACCEPT ]
