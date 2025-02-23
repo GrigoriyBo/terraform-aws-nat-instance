@@ -15,10 +15,11 @@ resource "aws_instance" "nat" {
   vpc_security_group_ids      = [aws_security_group.this.id]
   user_data_replace_on_change = var.user_data_replace_on_change
   user_data = templatefile("${path.module}/templates/nat-user-data.conf.tmpl", {
-    name          = var.name
-    mysubnet      = element(var.private_subnets, count.index)
-    vpc_cidr      = var.vpc_cidr_block
-    awsnycast_url = var.awsnycast_url
+    name                = var.name
+    mysubnet            = element(var.private_subnets, count.index)
+    vpc_cidr            = var.vpc_cidr_block
+    awsnycast_url       = var.awsnycast_url
+    zerotier_network_id = var.zerotier_network_id
   })
 
   lifecycle {

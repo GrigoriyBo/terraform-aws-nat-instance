@@ -60,3 +60,8 @@ variable "key_name" {
     description = "EC2 SSH key pair name"
     type        = string
 }
+
+variable "zerotier_network_id" {
+    description = "ZeroTier Network ID"
+    type        = string
+}
