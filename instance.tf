@@ -10,7 +10,7 @@ resource "aws_instance" "nat" {
   instance_type               = var.instance_type
   source_dest_check           = false
   iam_instance_profile        = aws_iam_instance_profile.nat_profile.id
-  key_name                    = aws_key_pair.this.key_name
+  key_name                    = var.key_name
   subnet_id                   = element(var.public_subnets, count.index)
   vpc_security_group_ids      = [aws_security_group.this.id]
   user_data_replace_on_change = var.user_data_replace_on_change
