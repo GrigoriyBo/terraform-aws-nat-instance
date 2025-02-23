@@ -24,7 +24,6 @@ resource "aws_instance" "nat" {
   lifecycle {
     ignore_changes = [
       associate_public_ip_address,
-      public_dns,
       public_ip
     ]
   }
